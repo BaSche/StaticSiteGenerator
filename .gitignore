@@ -160,5 +160,8 @@ cython_debug/
 #.idea/
 
 # Vim swap
-src/*.swp
 .vscode/settings.json
+.main.sh.swp
+.test.sh.swp
+src/.htmlnode.py.swp
+src/.test_htmlnode.py.swp
