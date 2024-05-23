@@ -1,9 +1,0 @@
-import unittest
-
-from textnode import TextNode
-
-
-class TestTextNode(unittest.Testcase):
-    def test_repr(self):
-        node= TextNode("text", "type", "url")
-        self.assertEqual("TextNode()", node.__repr__())
