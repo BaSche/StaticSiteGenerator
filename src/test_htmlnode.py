@@ -20,6 +20,14 @@ class Test_HTMLNode(unittest.TestCase):
         node = HTMLNode("tag", "value", None, {})
         self.assertEqual("", node.props_to_html(), "empty props must be rendered as empty string")
 
+    def test_props_to_html_None_props(self):
+        node = HTMLNode("tag", "value", None)
+        self.assertEqual('', node.props_to_html())
+
     def test_props_to_html(self):
         node = HTMLNode("tag", "value", None, {"p1" : "v1", "p2" : "v2"})
-        self.assertEqual('p1="v1" p2="v2"', node.props_to_html())
+        self.assertEqual(' p1="v1" p2="v2"', node.props_to_html())
+
+#    def test_noTagRendersAsPlainText(self):
+#        node = HTMLNode(None, "my value", None, None)
+#        self.assertEqual("my value", node.to_html()))

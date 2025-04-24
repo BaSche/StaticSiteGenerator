@@ -14,10 +14,12 @@ class HTMLNode:
         self.props = props
 
     def props_to_html(self):
+        if not self.props:
+            return ""
         propsAsHTML = list()
         for p in self.props:
-            propsAsHTML.append(f'{p}="{self.props[p]}"')
-        return " ".join(propsAsHTML)
+            propsAsHTML.append(f' {p}="{self.props[p]}"')
+        return "".join(propsAsHTML)
 
     def to_html(self):
         raise NotImplementedError
