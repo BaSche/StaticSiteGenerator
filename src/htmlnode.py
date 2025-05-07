@@ -6,8 +6,8 @@ class HTMLNode:
             props=None
             ):
 
-        if not value and not children:
-            raise ValueError("either value or children are needed")
+        if not tag and not children and not value:
+            raise ValueError("either value or tag or children are needed")
         self.tag = tag
         self.value = value
         self.children = children
