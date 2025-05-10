@@ -14,13 +14,13 @@ class TestTextNode(unittest.TestCase):
     def test_repr(self):
         node= TextNode("text")
         self.assertEqual(
-                "TextNode(text, TextType.NORMAL, None)",
+                "TextNode(text, TextType.TEXT, None)",
                 node.__repr__())
 
     def test_repr_none(self):
         node = TextNode(None)
         self.assertEqual(
-                "TextNode(None, TextType.NORMAL, None)",
+                "TextNode(None, TextType.TEXT, None)",
                 node.__repr__())
 
     def test_eq(self):
@@ -36,8 +36,8 @@ class TestTextNode(unittest.TestCase):
         self.assertEqual(node1, node2)
 
     def test_eq_not_text(self):
-        node1 = TextNode("one", TextType.NORMAL, "url")
-        node2 = TextNode("two", TextType.NORMAL, "url")
+        node1 = TextNode("one", TextType.TEXT, "url")
+        node2 = TextNode("two", TextType.TEXT, "url")
 
         self.assertNotEqual(node1, node2)
 

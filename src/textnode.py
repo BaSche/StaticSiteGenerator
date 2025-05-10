@@ -1,7 +1,7 @@
 from enum import Enum
 
 class TextType(Enum):
-    NORMAL  = 0
+    TEXT    = 0
     BOLD    = 1
     ITALIC  = 2
     CODE    = 3
@@ -13,7 +13,7 @@ class TextNode:
     text_type = ""
     url = ""
 
-    def __init__(self, text, text_type = TextType.NORMAL, url = None):
+    def __init__(self, text, text_type = TextType.TEXT, url = None):
         if not (isinstance(text_type, TextType)):
             raise ValueError(f"Texttype expected. Found instead: {text_type}")
         self.text = text
