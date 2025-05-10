@@ -1,6 +1,7 @@
 from htmlnode import HTMLNode
 
 class LeafNode(HTMLNode):
+
     def __init__(self, tag, value, props = None):
         if not tag and not value:
             raise ValueError("value may not be None")

@@ -25,3 +25,6 @@ class Test_ParentNode(unittest.TestCase):
 
     def test_to_html_withProps(self):
         node = ParentNode("tag", [LeafNode("b", None)], {"p1":"v1"})
+
+if __name__ == "__main__":
+    unittest.main()

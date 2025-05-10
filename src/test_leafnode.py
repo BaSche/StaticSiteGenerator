@@ -22,3 +22,6 @@ class Test_LeafNode(unittest.TestCase):
 
     def test_to_html_props(self):
         self.assertEqual('<t p1="v1">value</t>', LeafNode("t", "value", {'p1':'v1'}).to_html())
+
+if __name__ == "__main__":
+    unittest.main()

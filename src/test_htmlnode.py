@@ -31,3 +31,6 @@ class Test_HTMLNode(unittest.TestCase):
 #    def test_noTagRendersAsPlainText(self):
 #        node = HTMLNode(None, "my value", None, None)
 #        self.assertEqual("my value", node.to_html()))
+
+if __name__ == "__main__":
+    unittest.main()
