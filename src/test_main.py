@@ -37,9 +37,11 @@ class TestTextNodeTransformation(unittest.TestCase):
 
     def test_text_image(self):
         htmlnode = text_node_to_html_node(TextNode("image text", TextType.IMAGE, "image url"))
-        self.assertEqual("img", htmlnode.tag)
-        self.assertEqual("image text", htmlnode.value)
-        self.assertEqual({'href': "image url"}, htmlnode.props)
+        self.assertEqual("img", htmlnode.tag, f"tag for images should be <img> but was {htmlnode.tag}")
+        self.assertIsNone(htmlnode.value)
+        self.assertEqual("image url", htmlnode.props['src'], f"url of IMG-node should be mapped to property 'src'")
+        self.assertEqual("image text", htmlnode.props['alt'], "text of IMG-node should be mapped to property 'alt'")
+
 
 
 if __name__ == "__main__":
